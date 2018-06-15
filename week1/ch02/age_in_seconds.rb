@@ -1,0 +1,1 @@
+puts "\tWell, since I was born December 21, 1999 and by the end of June 14, 2018, tonight as of this code, I am about 18 years and 176 days old.\n\tThis means that I am " + ((366*5*24*60*60) + (365*24*60*60*13) + (176*24*60*60)).to_s + " seconds old."
