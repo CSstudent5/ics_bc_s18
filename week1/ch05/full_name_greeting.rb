@@ -7,5 +7,5 @@ last_name = gets.chomp
 if mid_name == ""
   puts "Hello, " + first_name + " " + last_name + ". It's nice to meet you."
   else
-  puts "Hello, " + first_name + " " + mid_name + " " + last_name + ". It's nice to meet you."
+  puts "Hello, " + first_name + " " + mid_name + " " + last_name + ". It's nice to meet you. Thank you for participating."
   end
