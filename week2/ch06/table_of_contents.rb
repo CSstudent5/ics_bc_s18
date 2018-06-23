@@ -1,0 +1,13 @@
+line_width = 40;
+str_table = 'Table of Contents';
+str_chapter_one = 'Chapter 1: Getting Started';
+str_chapter_two = 'Chapter 2: Numbers';
+str_chapter_three = 'Chapter 3: Letters';
+str_page = 'page';
+str_one = ' 1';
+str_nine = ' 9';
+str_thirteen = '13';
+puts (str_table.center(line_width*2));
+puts (str_chapter_one.ljust(line_width) + (str_page.rjust(line_width/2)+ " " + str_one));
+puts (str_chapter_two.ljust(line_width) + (str_page.rjust(line_width/2)+ " " + str_nine));
+puts (str_chapter_three.ljust(line_width) + (str_page.rjust(line_width/2)+ " " + str_thirteen));
