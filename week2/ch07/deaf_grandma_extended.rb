@@ -1,13 +1,14 @@
 puts "You approach Grandma to speak to her.";
-input = '';
-while input != "BYE"
+input = "";
+bye = 0
+while bye < 3
   input = gets.chomp
   if input == "BYE"
-      break
-    end
-  if input == input.upcase
-    puts "NO, NOT SINCE " + (rand(21) + 1930).to_s + "!"
-
-    else puts "HUH?! SPEAK UP, SONNY!"
+    puts "NO! NOT SINCE " + (1930+rand(21)).to_s + "!"
+    bye = (bye+1)
+  elsif input == input.upcase
+    puts "NO, NOT SINCE " + (1930+rand(21)).to_s + "!"
+  else
+    puts "HUH?! SPEAK UP, SONNY!"
   end
-end  
+end
