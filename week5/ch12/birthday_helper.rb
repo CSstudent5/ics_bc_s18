@@ -1,23 +1,28 @@
-puts "What year were you born in?"
-year = gets.chomp.to_i
+def birthday
+	birthday_array = Array.new
+	birth_dates = Hash.new
 
-puts "What month were you born in?"
-month = gets.chomp.to_i
+	f = File.open("Birthdays.txt", "r")
+	f.each_line do |line|
+	  birthday_array << line.split(", \t").map(&:strip)
+	end
+	f.close
 
-puts "What day were you born on?"
-day = gets.chomp.to_i
+	names = birthday_array.collect(&:first)
+	dates = birthday_array.collect(&:last)
 
-birthday = Time.local(year, month, day)
-time = Time.now
+	(1..names.length - 1).each { |index| birth_dates[names[index]] = dates[index]}
 
-if time.month - month < 0
-	age = time.year - year - 1
-elsif time.day - day < 0
-	age = time.year - year - 1
-else
-	age = time.year - year
+	puts "Who's birthday do you need?"
+	name = gets.chomp
+
+	birthday = birth_dates[name][0..5]
+	cur_year = Time.now.year
+	birth_year = birth_dates[name][-4..-1].to_i
+	age = cur_year - birth_year
+
+	puts "#{name}'s next birthday is on #{birthday} and they will be #{age} years old."
+
 end
 
-puts "You must be #{age} years old!  Here are some birthday SPANKS!"
-
-age.times { puts "SPANK!"}
+birthday()
